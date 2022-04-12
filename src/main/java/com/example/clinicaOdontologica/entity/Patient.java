@@ -1,6 +1,4 @@
-package com.example.clinicaOdontologica.model;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package com.example.clinicaOdontologica.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -23,21 +21,19 @@ public class Patient {
 
     private Date entryDate;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     public Patient() {
     }
 
-    public Patient(Integer id, String nombre, String apellido, String dni, Date fechaIngreso, Address domicilio) {
-        this.id = id;
-        this.name = nombre;
-        this.lastName = apellido;
+    public Patient(String name, String lastName, String dni, Date entryDate, Address address) {
+        this.name = name;
+        this.lastName = lastName;
         this.dni = dni;
-        this.entryDate = fechaIngreso;
-        this.address = domicilio;
+        this.entryDate = entryDate;
+        this.address = address;
     }
 
     public Integer getId() {

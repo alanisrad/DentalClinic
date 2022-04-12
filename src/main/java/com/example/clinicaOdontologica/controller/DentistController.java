@@ -1,6 +1,6 @@
 package com.example.clinicaOdontologica.controller;
 
-import com.example.clinicaOdontologica.model.Dentist;
+import com.example.clinicaOdontologica.entity.Dentist;
 import com.example.clinicaOdontologica.service.DentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.example.clinicaOdontologica.service;
 
-import com.example.clinicaOdontologica.model.Dentist;
+import com.example.clinicaOdontologica.entity.Dentist;
 import com.example.clinicaOdontologica.repository.impl.IDentistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,15 +17,6 @@ public class DentistService implements IEntityService<Dentist> {
     public DentistService(IDentistRepository dentistRepository) {
         this.dentistRepository = dentistRepository;
     }
-
-    public IDentistRepository getDentistRepository() {
-        return dentistRepository;
-    }
-
-    public void setDentistRepository(IDentistRepository dentistRepository) {
-        this.dentistRepository = dentistRepository;
-    }
-
 
     @Override
     public Dentist save(Dentist dentist) {

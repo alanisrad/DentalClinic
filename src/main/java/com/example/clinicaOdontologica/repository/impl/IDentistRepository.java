@@ -1,6 +1,6 @@
 package com.example.clinicaOdontologica.repository.impl;
 
-import com.example.clinicaOdontologica.model.Dentist;
+import com.example.clinicaOdontologica.entity.Dentist;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

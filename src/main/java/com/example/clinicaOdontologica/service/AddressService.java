@@ -1,6 +1,6 @@
 package com.example.clinicaOdontologica.service;
 
-import com.example.clinicaOdontologica.model.Address;
+import com.example.clinicaOdontologica.entity.Address;
 import com.example.clinicaOdontologica.repository.impl.IAddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

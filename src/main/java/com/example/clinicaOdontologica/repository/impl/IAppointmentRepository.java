@@ -1,6 +1,6 @@
 package com.example.clinicaOdontologica.repository.impl;
 
-import com.example.clinicaOdontologica.model.Appointment;
+import com.example.clinicaOdontologica.entity.Appointment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

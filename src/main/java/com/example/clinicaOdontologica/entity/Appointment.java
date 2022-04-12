@@ -1,7 +1,6 @@
-package com.example.clinicaOdontologica.model;
+package com.example.clinicaOdontologica.entity;
 
 
-import com.example.clinicaOdontologica.service.PatientService;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -21,13 +20,13 @@ public class Appointment {
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm")
     private LocalDateTime dateTime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnoreProperties({"dni", "entryDate", "address"})
     @JoinColumn(name = "patient_id", referencedColumnName = "id", nullable = false)
     private Patient patient;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnoreProperties({"licenseNumber"})
     @JoinColumn(name = "dentist_id", referencedColumnName = "id", nullable = false)
     private Dentist dentist;
 
@@ -35,10 +34,10 @@ public class Appointment {
     public Appointment() {
     }
 
-    public Appointment(Patient patient, Dentist dentist, LocalDateTime dateTime) {
+    public Appointment(LocalDateTime dateTime, Patient patient, Dentist dentist) {
+        this.dateTime = dateTime;
         this.patient = patient;
         this.dentist = dentist;
-        this.dateTime = dateTime;
     }
 
     public Integer getId() {

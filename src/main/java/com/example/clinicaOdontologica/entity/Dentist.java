@@ -1,4 +1,4 @@
-package com.example.clinicaOdontologica.model;
+package com.example.clinicaOdontologica.entity;
 
 import javax.persistence.*;
 
@@ -21,8 +21,7 @@ public class Dentist {
     public Dentist() {
     }
 
-    public Dentist(Integer id, String licenseNumber, String name, String lastName) {
-        this.id = id;
+    public Dentist(String licenseNumber, String name, String lastName) {
         this.licenseNumber = licenseNumber;
         this.name = name;
         this.lastName = lastName;
@@ -59,7 +58,7 @@ public class Dentist {
     @Override
     public String toString() {
         return "Dentist{" +
-                "licenseNumber=" + licenseNumber +
+                "licenseNumber='" + licenseNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';

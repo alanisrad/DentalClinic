@@ -1,6 +1,6 @@
 package com.example.clinicaOdontologica.controller;
 
-import com.example.clinicaOdontologica.model.Appointment;
+import com.example.clinicaOdontologica.entity.Appointment;
 import com.example.clinicaOdontologica.service.AppointmentService;
 import com.example.clinicaOdontologica.service.DentistService;
 import com.example.clinicaOdontologica.service.PatientService;

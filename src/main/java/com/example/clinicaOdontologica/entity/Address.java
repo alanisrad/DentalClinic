@@ -1,4 +1,4 @@
-package com.example.clinicaOdontologica.model;
+package com.example.clinicaOdontologica.entity;
 
 import javax.persistence.*;
 
@@ -23,12 +23,11 @@ public class Address {
     public Address() {
     }
 
-    public Address(Integer id, String calle, String numero, String localidad, String provincia) {
-        this.id = id;
-        this.street = calle;
-        this.number = numero;
-        this.location = localidad;
-        this.province = provincia;
+    public Address(String street, String number, String location, String province) {
+        this.street = street;
+        this.number = number;
+        this.location = location;
+        this.province = province;
     }
 
     public Integer getId() {
