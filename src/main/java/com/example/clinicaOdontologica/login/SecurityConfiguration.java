@@ -32,7 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/dentists/**").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .formLogin();
+                .httpBasic();
     }
 
     @Override
