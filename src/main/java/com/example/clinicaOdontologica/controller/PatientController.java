@@ -1,6 +1,7 @@
 package com.example.clinicaOdontologica.controller;
 
 import com.example.clinicaOdontologica.entity.Patient;
+import com.example.clinicaOdontologica.exception.DniException;
 import com.example.clinicaOdontologica.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class PatientController {
 
     //POST
     @PostMapping("/save")
-    public ResponseEntity<Patient> save(@RequestBody Patient patient) {
+    public ResponseEntity<Patient> save(@RequestBody Patient patient) throws DniException {
         return new ResponseEntity<>(patientService.save(patient), HttpStatus.CREATED);
     }
 

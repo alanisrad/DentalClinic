@@ -1,6 +1,7 @@
 package com.example.clinicaOdontologica.service;
 
 import com.example.clinicaOdontologica.entity.Patient;
+import com.example.clinicaOdontologica.exception.DniException;
 import com.example.clinicaOdontologica.repository.impl.IPatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,12 @@ public class PatientService implements IEntityService<Patient>{
     }
 
     @Override
-    public Patient save(Patient patient) {
+    public Patient save(Patient patient) throws DniException {
+        for (Patient p : patientRepository.findAll()) {
+            if(p.getDni().equals(patient.getDni())) {
+                throw new DniException("Error: DNI ya registrado");
+            }
+        }
         patient.setEntryDate(new Date(System.currentTimeMillis()));
         return patientRepository.save(patient);
     }
